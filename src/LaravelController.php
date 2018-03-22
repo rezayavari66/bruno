@@ -1,6 +1,6 @@
 <?php
 
-namespace Optimus\Bruno;
+namespace Rezayavari\Querybuilder;
 
 use JsonSerializable;
 use InvalidArgumentException;

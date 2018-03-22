@@ -1,4 +1,4 @@
-# Bruno
+# Querybuilder
 
 [![Latest Version](https://img.shields.io/github/release/esbenp/bruno.svg?style=flat-square)](https://github.com/esbenp/bruno/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
@@ -11,7 +11,7 @@
 A Laravel base controller class and a trait that will enable to add filtering, sorting, eager loading and pagination to your
 resource URLs.
 
-**Dedicated to Giordano Bruno**
+**Dedicated to Giordano Querybuilder**
 
 This package is named after my hero Giordano Bruno. A true visionary who dared to dream beyond what was thought possible.
 For his ideas and his refusal to renounce them he was burned to the stake in 1600.
@@ -31,14 +31,10 @@ To get started with Bruno I highly recommend my article on
 
 ## Installation
 
-For Laravel 5.3 and below
-```bash
-composer require optimus/bruno ~2.0
-```
 
 For Laravel 5.4 and above
 ```bash
-composer require optimus/bruno ~3.0
+composer require rezayavari/querybuilder ~1.0
 ```
 
 ## Usage

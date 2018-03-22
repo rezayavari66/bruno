@@ -1,8 +1,8 @@
 {
-    "name": "optimus/bruno",
+    "name": "rezayavari/querybuilder",
     "autoload": {
         "psr-4": {
-            "Optimus\\Bruno\\": "src/"
+            "Rezayavari\\Querybuilder\\": "src/"
         }
     },
     "require": {
