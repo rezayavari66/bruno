@@ -77,15 +77,18 @@ abstract class LaravelController extends Controller
 		];
 		
 		foreach ($includes as $include) {
+			//there are relation's name and mode in $expolode[0]
+			//there are fields in $explode[1]
 			$explode = explode(':', $include);
 			
-			if (!isset($explode[1]) || true) {
-				$explode[1] = $this->defaults['mode'];
+			$sub_explode = explode(',',$explode[0]);
+			
+			if (!isset($sub_explode[1]) || true) {
+				$sub_explode[1] = $this->defaults['mode'];
 			}
 			
-			$return['includes'][] = $explode[0];
-			$return['includes'][] = $include;
-			$return['modes'][$explode[0]] = $explode[1];
+			$return['includes'][] = $sub_explode[0].':'.$explode[1];
+			$return['modes'][$explode[0]] = $sub_explode[1];
 		}
 		
 		return $return;
