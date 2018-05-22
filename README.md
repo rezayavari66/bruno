@@ -28,7 +28,7 @@ To get started with Bruno I highly recommend my article on
 
 For Laravel 5.4 and above
 ```bash
-composer require rezayavari/querybuilder ~1.0
+composer require rezayavari/querybuilder ~4.0
 ```
 
 ## Usage
