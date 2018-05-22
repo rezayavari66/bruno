@@ -83,11 +83,14 @@ abstract class LaravelController extends Controller
 			
 			$sub_explode = explode(',',$explode[0]);
 			
-			if (!isset($sub_explode[1]) || true) {
+			if (!isset($sub_explode[1])) {
 				$sub_explode[1] = $this->defaults['mode'];
 			}
-			
-			$return['includes'][] = $sub_explode[0].':'.$explode[1];
+			$include_res = $sub_explode[0];
+			if (isset($explode[1]) ){
+				$include_res = $sub_explode[0].':'.$explode[1];
+			}
+			$return['includes'][] = $include_res;
 			$return['modes'][$explode[0]] = $sub_explode[1];
 		}
 		
