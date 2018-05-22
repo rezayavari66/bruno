@@ -1,11 +1,5 @@
 # Querybuilder
 
-[![Latest Version](https://img.shields.io/github/release/esbenp/bruno.svg?style=flat-square)](https://github.com/esbenp/bruno/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/esbenp/bruno/master.svg?style=flat-square)](https://travis-ci.org/esbenp/bruno)
-[![Coverage Status](https://img.shields.io/coveralls/esbenp/bruno.svg?style=flat-square)](https://coveralls.io/github/esbenp/bruno)
-[![Total Downloads](https://img.shields.io/packagist/dt/optimus/bruno.svg?style=flat-square)](https://packagist.org/packages/optimus/bruno)
-
 ## Introduction
 
 A Laravel base controller class and a trait that will enable to add filtering, sorting, eager loading and pagination to your
@@ -95,26 +89,23 @@ class BookController extends LaravelController
 
 ### Eager loading
 
+#### Comprehensive syntax
+`includes[]=relation,mode:fields`
+
 **Simple eager load**
 
-`/books?includes[]=author`
+`/books?includes[]=author:id,name`
 
 Will return a collection of 5 `Book`s eager loaded with `Author`.
 
-**IDs mode**
-
-`/books?includes[]=author:ids`
-
-Will return a collection of `Book`s eager loaded with the ID of their `Author`
-
 **Sideload mode**
 
-`/books?includes[]=author:sideload`
+`/books?includes[]=author,sideload:id,name,created_at`
 
 Will return a collection of `Book`s and a eager loaded collection of their
 `Author`s in the root scope.
 
-[See mere about eager loading types in Optimus\Architect's README](https://github.com/esbenp/architect)
+[See mere about eager loading types in Architect\Architect's README](https://github.com/rezayavari66/architect)
 
 ### Pagination
 
@@ -323,7 +314,7 @@ For example, this group of filters (Verbose)
                 "key": "author",
                 "value": "Prime",
                 "operator": "ew"
-            }
+            },
             {
                 "key": "deleted_at",
                 "value": null,
@@ -366,8 +357,8 @@ $ phpunit
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/esbenp/bruno/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/rezayavari66/querybuilder/blob/master/CONTRIBUTING.md) for details.
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/esbenp/bruno/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/rezayavari66/querybuilder/blob/master/LICENSE) for more information.

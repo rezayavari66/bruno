@@ -29,7 +29,6 @@ trait EloquentBuilderTrait
 			if (!is_array($includes)) {
 				throw new InvalidArgumentException('Includes should be an array.');
 			}
-			
 			$queryBuilder->with($includes);
 		}
 		
@@ -61,12 +60,18 @@ trait EloquentBuilderTrait
 			$queryBuilder->offset($page * $limit);
 		}
 		
+		if (isset($distinct)) {
+			$queryBuilder->distinct();
+		}
+		
 		if (isset($group_by) && !empty($group_by)){
 			$queryBuilder->groupBy($group_by);
 		}
 		
-		if (isset($distinct)) {
-			$queryBuilder->distinct();
+		if (isset($selects) && !empty($selects)){
+			
+			$selects_array = explode(',',$selects);
+			$queryBuilder->select($selects_array);
 		}
 		
 		return $queryBuilder;
@@ -84,7 +89,6 @@ trait EloquentBuilderTrait
 		foreach ($filterGroups as $group) {
 			$or = $group['or'];
 			$filters = $group['filters'];
-			
 			$queryBuilder->where(function (Builder $query) use ($filters, $or, &$joins) {
 				foreach ($filters as $filter) {
 					$this->applyFilter($query, $filter, $or, $joins);
