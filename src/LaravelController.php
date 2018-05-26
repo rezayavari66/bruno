@@ -91,9 +91,8 @@ abstract class LaravelController extends Controller
 				$include_res = $sub_explode[0].':'.$explode[1];
 			}
 			$return['includes'][] = $include_res;
-			$return['modes'][$explode[0]] = $sub_explode[1];
+			$return['modes'][$include_res] = $sub_explode[1];
 		}
-		
 		return $return;
 	}
 	
