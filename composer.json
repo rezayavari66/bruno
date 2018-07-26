@@ -6,7 +6,7 @@
         }
     },
     "require": {
-         "illuminate/database": ">=4.0",
+        "laravel/framework": "~5.4",
         "rezayavari/architect": "~1.0"
     },
     "require-dev": {
